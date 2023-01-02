@@ -50,20 +50,22 @@ def main():
                     '%', '^', '&', '*', '(', ')', ' ']
 
         # Get the direction from the user
-        direction = input("Type '\033[31;1mencode\033[31;0m' to encrypt, type '\033[31;1mdecode\033[31;0m' to decrypt:\n")
+        direction = input("Type\033[31;1m 'encode'\033[31;0m to encrypt, or\033[31;1m 'decode'\033[31;0m to decrypt:\n")
         while direction != 'encode' and direction != 'decode':
-            direction = input("Invalid direction. Please type '\033[31;1mencode\033[31;0m' or '\033[31;1mdecode\033[31;0m':\n")
+            direction = input("Invalid direction."
+                              "Please type\033[31;1m 'encode'\033[31;0m or\033[31;1m 'decode'\033[31;0m:\n")
 
         # Get the text from the user
-        text = input("Type your '\033[31;1mmessage\033[31;0m':\n").lower()
+        text = input("Type your\033[31;1m 'message'\033[31;0m:\n").lower()
 
         # Get the shift from the user
         while True:
             try:
-                shift = int(input("Type the shift '\033[31;1mnumber\033[31;0m':\n"))
+                shift = int(input("Type the shift\033[31;1m 'number'\033[31;0m:\n"))
                 break
             except ValueError:
-                print("Invalid direction. Must to be a '\033[31;1mdigit\033[31;0m':\n")
+                print("Invalid direction."
+                      "Must to be a\033[31;1m 'digit'\033[31;0m:\n")
 
         # Call the appropriate function based on the direction
         if direction == "encode":
@@ -74,11 +76,13 @@ def main():
             print(f"Here's the decoded result:\n\033[31;1m{result}\033[31;0m")
 
         # Get input from user to determine if they want to run the program again
-        play_again = input("Type '\033[31;1mYes\033[31;0m' if you want to go again. Otherwise type '\033[31;1mNo\033[31;0m':\n")
+        play_again = input("Type\033[31;1m 'Yes'\033[31;0m if you want to go again."
+                           "Otherwise type\033[31;1m 'No'\033[31;0m:\n")
 
         # Validate the input, prompting for correct input if necessary
         while play_again != 'yes' and play_again != 'no':
-            play_again = input("Invalid direction. Please type '\033[31;1mYes\033[31;0m' or '\033[31;1mNo\033[31;0m':\n")
+            play_again = input("Invalid direction."
+                               "Please type\033[31;1m 'Yes'\033[31;0m or\033[31;1m 'No'\033[31;0m:\n")
 
         # If the user does not want to run the program again, set play_again to 'False' to exit the loop
         if play_again == "no":
